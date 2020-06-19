@@ -13,7 +13,9 @@ class _VideoPageState extends State<VideoPage> {
   void initState() {
     super.initState();
     _controller = VideoPlayerController.network(
-        'https://streamvideo.luxnet.ua/news24/smil:news24.stream.smil/playlist.m3u8'
+        //'https://streamvideo.luxnet.ua/news24/smil:news24.stream.smil/playlist.m3u8',
+        'http://cdn1.live-tv.od.ua:8081/mobileenglishclub/eclub-abr-lq/playlist.m3u8',
+        //'https://59e5d081ab116.streamlock.net/Kids/Kids/playlist.m3u8',
         //'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4',
         //'https://player.vimeo.com/external/342264984.sd.mp4?s=8cd77fb6b79637c7dd183156eb7612781b7d79af&profile_id=139&oauth2_token_id=388034055'
     );
@@ -82,7 +84,6 @@ class _PlayPauseOverlay extends StatelessWidget {
                   GestureDetector(
                     onTap: () {
                       developer.log('pressed', name: 'row');
-                      //controller.play();
                     },
                     child: Icon(
                       Icons.play_arrow,
@@ -97,7 +98,6 @@ class _PlayPauseOverlay extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            //controller.value.isPlaying ? controller.pause():{} ;//: controller.play();
             controller.value.isPlaying ? controller.pause(): controller.play();
             developer.log('pressed', name: 'overlay');
           },
